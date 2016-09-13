@@ -39,11 +39,14 @@ export default class Panel extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.setKnobs = this.setKnobs.bind(this);
+    this.clearKnobs = this.clearKnobs.bind(this);
     this.reset = this.reset.bind(this);
 
     this.state = { knobs: {} };
     this.loadedFromUrl = false;
     this.props.channel.on('addon:knobs:setKnobs', this.setKnobs);
+
+    this.props.api.onStory(this.clearKnobs);
   }
 
   componentWillUnmount() {
@@ -72,6 +75,10 @@ export default class Panel extends React.Component {
     this.loadedFromUrl = true;
     api.setQueryParams(queryParams);
     this.setState({ knobs });
+  }
+
+  clearKnobs() {
+    this.setState({ knobs: [] });
   }
 
   reset() {
