@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface KnobOption<T> {
 	value: T,
-	type: 'text' | 'boolean' | 'number' | 'color' | 'object' | 'select' | 'date',
+	type: 'text' | 'boolean' | 'number' | 'color' | 'object' | 'array' | 'select' | 'date',
 }
 
 interface StoryContext {
@@ -23,7 +23,9 @@ export function color(name: string, value: string): string;
 export function object<T>(name: string, value: T): T;
 
 export function select<T>(name: string, options: { [s: string]: T }, value: string): T;
-export function select(name: string, options: string[], value: string): string;
+export function select<T>(name: string, options: T[], value: T): T;
+
+export function array<T>(name: string, value: T[], separator: string): T[];
 
 export function date(name: string, value?: Date): Date;
 
