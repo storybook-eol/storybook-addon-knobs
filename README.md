@@ -3,6 +3,12 @@
 Knobs allow you to edit React props dynamically using the Storybook UI.
 You can also use Knobs as a dynamic variable inside stories.
 
+--- 
+
+**This repo has been deprecated because it's now included in https://github.com/storybooks/storybook**
+
+---
+
 This is how Knobs look like:
 
 [![Storybook Knobs Demo](docs/storybook-knobs-example.png)](https://git.io/vXdhZ)
